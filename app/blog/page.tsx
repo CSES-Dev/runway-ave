@@ -49,7 +49,7 @@ export default function BlogPage() {
                         <img
                             src={get(-1)}
                             alt="previous update"
-                            className="h-[180px] w-[180px] object-cover transition-all duration-300"
+                            className="h-[226px] w-[234px] object-cover transition-all duration-300"
                         />
 
                         {/* Left arrow */}
@@ -64,7 +64,7 @@ export default function BlogPage() {
                         <img
                             src={get(0)}
                             alt="current update"
-                            className="h-[280px] w-[280px] object-cover transition-all duration-300"
+                            className="h-[419px] w-[416px] object-cover transition-all duration-300"
                         />
 
                         {/* Right arrow */}
@@ -79,12 +79,21 @@ export default function BlogPage() {
                         <img
                             src={get(1)}
                             alt="next update"
-                            className="h-[180px] w-[180px] object-cover transition-all duration-300"
+                            className="h-[226px] w-[234px] object-cover transition-all duration-300"
                         />
                     </div>
                 </section>
+                
+                <section className="space-y-10">
+                    <h1 className="text-5xl font-serif tracking-wide">MEDIA</h1>
+                    <div className="grid grid-cols-2 gap-[16px]">
+                        <div className="h-[422px] bg-[#D9D9D9] rounded-2xl"></div>
+                        <div className="h-[422px] bg-[#D9D9D9] rounded-2xl"></div>
+                        <div className="h-[422px] bg-[#D9D9D9] rounded-2xl"></div>
+                        <div className="h-[422px] bg-[#D9D9D9] rounded-2xl"></div>
+                    </div>
+                </section>
             </div>
-            
         </main>
 
     );
