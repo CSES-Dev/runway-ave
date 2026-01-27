@@ -40,14 +40,14 @@ export default function SignupPage()
                         </div>
 
                         {/* Form block */}
-                        <div className="max-w-xl">
+                        <div className="max-w-[640px]">
                             <EmailSignupForm />
                         </div>
                     </div>
                 </section>
 
                 {/* Download our app promo section */}
-                <section className="mt-12 rounded-2xl bg-primary px-8 py-10">
+                <section className="mt-12 rounded-2xl bg-accent px-8 py-10">
                     <div className="grid gap-10 md:grid-cols-2 md:items-center">
                         {/* Left: heading + features */}
                         <div className="space-y-6 text-primary-foreground">
@@ -73,9 +73,9 @@ export default function SignupPage()
 
                         {/* Right: video/demo placeholder */}
                         <div className="mx-auto w-full max-w-sm">
-                            <div className="aspect-square w-full rounded-md bg-background/20">
+                            <div className="aspect-square w-full rounded-md bg-background/60">
                                 <div className="flex h-full items-center justify-center">
-                                    <p className="text-xs text-primary-foreground/80">
+                                    <p className="text-xs text-primary">
                                         video showcasing app demo
                                     </p>
                                 </div>
