@@ -19,30 +19,28 @@ export default function EmailSignupForm()
 
     return (
         <form
-            className="flex w-full flex-col gap-4 sm:flex-row sm:items-center"
+            className="flex w-full max-w-[745px] flex-col gap-4 sm:flex-row sm:items-center"
             onSubmit={handleSubmit}
         >
-            <div className="w-full">
+            <div className="flex-1">
                 <Label htmlFor="signup-email" className="sr-only">
                     Email
                 </Label>
 
                 <Input
                     id="signup-email"
-                    name="email"
                     type="email"
                     placeholder="youremail@email.com"
-                    autoComplete="email"
                     value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                    className="h-14 rounded-full bg-muted px-4 border-0 focus-visible:ring-2"
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="h-14 rounded-full bg-muted px-5 text-[20px] placeholder:text-[20px] border-0 focus-visible:ring-2"
                     required
                 />
             </div>
 
             <Button
                 type="submit"
-                className="h-14 w-[257px] rounded-full px-6 sm:w-auto"
+                className="h-14 w-[257px] shrink-0 rounded-full px-6 text-[20px] font-medium"
             >
                 Subscribe
             </Button>
