@@ -27,7 +27,7 @@ export default function BlogPage() {
 
     return (
         <main className="min-h-screen bg-[#FDFCF7] text-base">
-            <div className="px-32 py-12 space-y-12">
+            <div className="px-4 md:px-16 lg:px-32 py-12 space-y-12">
                 <img
                 src="image.png"
                 alt="image"
@@ -35,8 +35,8 @@ export default function BlogPage() {
                 />
 
                 <section className="space-y-10">
-                    <h1 className="text-5xl font-serif tracking-wide">ANNOUNCEMENTS</h1>
-                    <div className="grid grid-cols-2 gap-[16px]">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif tracking-wide">ANNOUNCEMENTS</h1>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-[16px]">
                         <Announcement />
                         <Announcement />
                         <Announcement />
@@ -45,12 +45,12 @@ export default function BlogPage() {
                 </section>
 
                 <section className="space-y-10">
-                    <h1 className="text-5xl font-serif tracking-wide">UPDATES</h1>
-                    <div className="flex items-center justify-center gap-8">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif tracking-wide">UPDATES</h1>
+                    <div className="flex items-center justify-center gap-4 sm:gap-8">
 
                         {/* Previous slide */}
                         <Updates
-                            className="h-[226px] w-[234px] flex items-center justify-center text-center p-4 text-sm"
+                            className="h-[150px] sm:h-[226px] w-full sm:w-[234px] flex items-center justify-center text-center p-2 sm:p-4 text-xs sm:text-sm"
                         >
                             {get(-1)}
                         </Updates>
@@ -58,14 +58,14 @@ export default function BlogPage() {
                         {/* Left arrow */}
                         <button
                             onClick={prev}
-                            className="text-4xl font-light hover:opacity-60"
+                            className="text-2xl sm:text-4xl font-light hover:opacity-60"
                         >
                             &#8249;
                         </button>
 
                         {/* Active slide */}
                         <Updates 
-                            className="h-[419px] w-[416px] flex items-center justify-center text-center p-6 text-lg"
+                            className="h-[250px] sm:h-[419px] w-full sm:w-[416px] flex items-center justify-center text-center p-4 sm:p-6 text-sm sm:text-lg"
                         >
                             {get(0)}
                         </Updates>
@@ -73,14 +73,14 @@ export default function BlogPage() {
                         {/* Right arrow */}
                         <button
                             onClick={next}
-                            className="text-4xl font-light hover:opacity-60"
+                            className="text-2xl sm:text-4xl font-light hover:opacity-60"
                         >
                             &#8250;
                         </button>
 
                         {/* Next slide */}
                         <Updates
-                            className="h-[226px] w-[234px] flex items-center justify-center text-center p-4 text-sm"
+                            className="h-[150px] sm:h-[226px] w-full sm:w-[234px] flex items-center justify-center text-center p-2 sm:p-4 text-xs sm:text-sm"
                         >
                             {get(1)}
                         </Updates>
@@ -88,8 +88,8 @@ export default function BlogPage() {
                 </section>
                 
                 <section className="space-y-10">
-                    <h1 className="text-5xl font-serif tracking-wide">MEDIA</h1>
-                    <div className="grid grid-cols-2 gap-[16px]">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif tracking-wide">MEDIA</h1>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-[16px]">
                         <Media />
                         <Media />
                         <Media />
