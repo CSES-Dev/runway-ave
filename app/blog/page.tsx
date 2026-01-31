@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Updates from './Updates';
+import Announcement from './Announcement';
 
 const updateContents = [
   "Update 1",
@@ -35,10 +36,10 @@ export default function BlogPage() {
                 <section className="space-y-10">
                     <h1 className="text-5xl font-serif tracking-wide">ANNOUNCEMENTS</h1>
                     <div className="grid grid-cols-2 gap-[16px]">
-                        <div className="h-[124px] bg-[#D9D9D9]"></div>
-                        <div className="h-[124px] bg-[#D9D9D9]"></div>
-                        <div className="h-[124px] bg-[#D9D9D9]"></div>
-                        <div className="h-[124px] bg-[#D9D9D9]"></div>
+                        <Announcement />
+                        <Announcement />
+                        <Announcement />
+                        <Announcement />
                     </div>
                 </section>
 
