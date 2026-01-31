@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Updates from './Updates';
 import Announcement from './Announcement';
+import Media from './Media';
 
 const updateContents = [
   "Update 1",
@@ -49,7 +50,7 @@ export default function BlogPage() {
 
                         {/* Previous slide */}
                         <Updates
-                            className="h-[226px] w-[234px]"
+                            className="h-[226px] w-[234px] flex items-center justify-center text-center p-4 text-sm"
                         >
                             {get(-1)}
                         </Updates>
@@ -64,7 +65,7 @@ export default function BlogPage() {
 
                         {/* Active slide */}
                         <Updates 
-                            className="h-[419px] w-[416px]"
+                            className="h-[419px] w-[416px] flex items-center justify-center text-center p-6 text-lg"
                         >
                             {get(0)}
                         </Updates>
@@ -79,7 +80,7 @@ export default function BlogPage() {
 
                         {/* Next slide */}
                         <Updates
-                            className="h-[226px] w-[234px]"
+                            className="h-[226px] w-[234px] flex items-center justify-center text-center p-4 text-sm"
                         >
                             {get(1)}
                         </Updates>
@@ -89,10 +90,10 @@ export default function BlogPage() {
                 <section className="space-y-10">
                     <h1 className="text-5xl font-serif tracking-wide">MEDIA</h1>
                     <div className="grid grid-cols-2 gap-[16px]">
-                        <div className="h-[422px] bg-[#D9D9D9] rounded-2xl"></div>
-                        <div className="h-[422px] bg-[#D9D9D9] rounded-2xl"></div>
-                        <div className="h-[422px] bg-[#D9D9D9] rounded-2xl"></div>
-                        <div className="h-[422px] bg-[#D9D9D9] rounded-2xl"></div>
+                        <Media />
+                        <Media />
+                        <Media />
+                        <Media />
                     </div>
                 </section>
             </div>
