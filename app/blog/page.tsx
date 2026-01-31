@@ -49,7 +49,7 @@ export default function BlogPage() {
 
                         {/* Previous slide */}
                         <Updates
-                            className="h-[226px] w-[234px] transition-all duration-300 flex items-center justify-center text-center p-4 text-sm"
+                            className="h-[226px] w-[234px]"
                         >
                             {get(-1)}
                         </Updates>
@@ -64,7 +64,7 @@ export default function BlogPage() {
 
                         {/* Active slide */}
                         <Updates 
-                            className="h-[419px] w-[416px] transition-all duration-300 flex items-center justify-center text-center p-6 text-lg"
+                            className="h-[419px] w-[416px]"
                         >
                             {get(0)}
                         </Updates>
@@ -79,7 +79,7 @@ export default function BlogPage() {
 
                         {/* Next slide */}
                         <Updates
-                            className="h-[226px] w-[234px] transition-all duration-300 flex items-center justify-center text-center p-4 text-sm"
+                            className="h-[226px] w-[234px]"
                         >
                             {get(1)}
                         </Updates>

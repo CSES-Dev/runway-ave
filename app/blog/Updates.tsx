@@ -6,7 +6,7 @@ interface UpdatesProps {
 }
 
 const Updates: React.FC<UpdatesProps> = ({ className, children }) => {
-  return <div className={`bg-[#D9D9D9] ${className || ''}`}>{children}</div>;
+  return <div className={`bg-[#D9D9D9] transition-all duration-300 flex items-center justify-center text-center p-4 text-sm${className || ''}`}>{children}</div>;
 };
 
 export default Updates;
