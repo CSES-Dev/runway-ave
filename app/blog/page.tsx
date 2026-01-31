@@ -1,17 +1,18 @@
 "use client";
 import { useState } from "react";
+import Updates from './Updates';
 
-const slides = [
-  "image.png",
-  "image.png",
-  "image.png",
-  "image.png",
-  "image.png",
+const updateContents = [
+  "Update 1",
+  "Update 2",
+  "Update 3",
+  "Update 4",
+  "Update 5",
 ];
 
 export default function BlogPage() {
     const [index, setIndex] = useState(0);
-    const total = slides.length;
+    const total = updateContents.length;
 
     const prev = () =>
     setIndex((i) => (i === 0 ? total - 1 : i - 1));
@@ -20,7 +21,7 @@ export default function BlogPage() {
     setIndex((i) => (i === total - 1 ? 0 : i + 1));
 
     const get = (offset : number) =>
-    slides[(index + offset + total) % total];
+    updateContents[(index + offset + total) % total];
 
     return (
         <main className="min-h-screen bg-[#FDFCF7] text-base">
@@ -46,11 +47,11 @@ export default function BlogPage() {
                     <div className="flex items-center justify-center gap-8">
 
                         {/* Previous slide */}
-                        <img
-                            src={get(-1)}
-                            alt="previous update"
-                            className="h-[226px] w-[234px] object-cover transition-all duration-300"
-                        />
+                        <Updates
+                            className="h-[226px] w-[234px] transition-all duration-300 flex items-center justify-center text-center p-4 text-sm"
+                        >
+                            {get(-1)}
+                        </Updates>
 
                         {/* Left arrow */}
                         <button
@@ -61,11 +62,11 @@ export default function BlogPage() {
                         </button>
 
                         {/* Active slide */}
-                        <img
-                            src={get(0)}
-                            alt="current update"
-                            className="h-[419px] w-[416px] object-cover transition-all duration-300"
-                        />
+                        <Updates 
+                            className="h-[419px] w-[416px] transition-all duration-300 flex items-center justify-center text-center p-6 text-lg"
+                        >
+                            {get(0)}
+                        </Updates>
 
                         {/* Right arrow */}
                         <button
@@ -76,11 +77,11 @@ export default function BlogPage() {
                         </button>
 
                         {/* Next slide */}
-                        <img
-                            src={get(1)}
-                            alt="next update"
-                            className="h-[226px] w-[234px] object-cover transition-all duration-300"
-                        />
+                        <Updates
+                            className="h-[226px] w-[234px] transition-all duration-300 flex items-center justify-center text-center p-4 text-sm"
+                        >
+                            {get(1)}
+                        </Updates>
                     </div>
                 </section>
                 
