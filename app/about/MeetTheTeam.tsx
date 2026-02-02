@@ -47,7 +47,7 @@ export default function MeetTheTeam() {
                         onClick={() => setPage((p) => Math.max(0, p - 1))}
                         disabled={!canPrev}
                         aria-label="Previous page"
-                        className="shrink-0 rounded-full p-2 text-foreground bg-secondary hover:bg-secondary/80 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-secondary transition-colors"
+                        className="shrink-0 self-center rounded-full p-2 text-foreground bg-secondary hover:bg-secondary/80 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-secondary transition-colors -translate-y-[calc(theme(spacing.2)+0.5em)]"
                     >
                         <ChevronLeft className="w-6 h-6" />
                     </button>
@@ -78,7 +78,7 @@ export default function MeetTheTeam() {
                         onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
                         disabled={!canNext}
                         aria-label="Next page"
-                        className="shrink-0 rounded-full p-2 text-foreground bg-secondary hover:bg-secondary/80 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-secondary transition-colors"
+                        className="shrink-0 self-center rounded-full p-2 text-foreground bg-secondary hover:bg-secondary/80 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-secondary transition-colors -translate-y-[calc(theme(spacing.2)+0.5em)]"
                     >
                         <ChevronRight className="w-6 h-6" />
                     </button>
