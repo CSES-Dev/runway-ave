@@ -33,7 +33,7 @@ export default function EmailSignupForm()
                     placeholder="youremail@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="h-14 rounded-full bg-muted px-5 text-[20px] placeholder:text-[20px] border-0 focus-visible:ring-2"
+                    className="h-14 rounded-full bg-input px-5 text-[20px] placeholder:text-[20px] border-0 focus-visible:ring-2"
                     required
                 />
             </div>

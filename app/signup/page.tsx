@@ -18,7 +18,7 @@ export default function SignupPage()
                     />
 
                     {/* Nav placeholder */}
-                    <div className="hidden h-9 w-72 rounded-full bg-muted md:block" />
+                    <div className="hidden h-9 w-72 rounded-full bg-input md:block" />
                 </div>
             </header>
 
