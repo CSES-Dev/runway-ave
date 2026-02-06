@@ -17,7 +17,8 @@
     },
     "dependencies": {
         "@playwright/test": "^1.49.0",
-        "@radix-ui/react-slot": "^1.1.0",
+        "@radix-ui/react-label": "^2.1.8",
+        "@radix-ui/react-slot": "^1.2.4",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "lucide-react": "^0.464.0",
@@ -27,6 +28,7 @@
         "react": "19.0.0-rc-66855b96-20241106",
         "react-dom": "19.0.0-rc-66855b96-20241106",
         "tailwind-merge": "^2.5.5",
+        "tailwind-scrollbar-hide": "^4.0.0",
         "zod": "^4.1.12"
     },
     "devDependencies": {
