@@ -1,5 +1,5 @@
 'use client';
-import ContactScrollSection from "@/app/contact/contact_components/ContactScrollSection";
+import ContactScrollSection from "@/app/contact/components/ContactScrollSection";
 
 export default function ContactPage() {
   return (

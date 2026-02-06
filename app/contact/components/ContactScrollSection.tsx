@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import VendorInquiries from "@/app/contact/contact_components/VendorInquiries";
-import PressInquiries from "@/app/contact/contact_components/PressInquiries";
-import GeneralSupport from "@/app/contact/contact_components/GeneralSupport";
+import VendorInquiries from "@/app/contact/components/VendorInquiries";
+import PressInquiries from "@/app/contact/components/PressInquiries";
+import GeneralSupport from "@/app/contact/components/GeneralSupport";
 
 // Add cards into here if needed, ideally with the same visuals as the rest.
 const cards = [VendorInquiries, PressInquiries, GeneralSupport];
