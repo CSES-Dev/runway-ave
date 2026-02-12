@@ -5,23 +5,6 @@ export default function SignupPage()
 {
     return (
         <main className="min-h-screen bg-background text-foreground">
-            {/* Navbar placeholder — handled in separate PR */}
-            <header className="w-full pt-8">
-                <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-                    {/* Logo */}
-                    <Image
-                        src="/runwaylogo.png"
-                        alt="Runway Avenue logo"
-                        width={129}
-                        height={116}
-                        priority
-                    />
-
-                    {/* Nav placeholder */}
-                    <div className="hidden h-9 w-72 rounded-full bg-input md:block" />
-                </div>
-            </header>
-
             {/* Page content */}
             <div className="mx-auto w-full max-w-6xl px-6 py-10">
                 {/* Email entry */}
