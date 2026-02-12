@@ -35,7 +35,7 @@ export default function MeetTheTeam() {
     const showArrows = TEAM.length > PAGE_SIZE;
 
     return (
-        <section className="w-full bg-white pt-10 pb-16 md:pt-14 md:pb-24 px-4 md:px-8">
+        <section className="w-full bg-white pt-36 pb-16 md:pt-14 md:pb-24 px-4 md:px-8">
             <h2 className="text-center font-normal text-black mb-12 md:mb-16 text-[clamp(2rem,5vw,70px)] leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Meet the Team:
             </h2>
