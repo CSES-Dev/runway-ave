@@ -6,11 +6,11 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const links = [
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/signup', label: 'Sign Up' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contact' },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/signup", label: "Sign Up" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
 ];
 
 export default function NavBar() {

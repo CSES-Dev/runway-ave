@@ -1,5 +1,5 @@
-import MeetTheTeam from './MeetTheTeam';
-import AboutSection from './sections/AboutSection';
+import AboutSection from "./sections/AboutSection";
+import MeetTheTeam from "./sections/MeetTheTeam";
 
 export default function Page() {
     return (
