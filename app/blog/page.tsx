@@ -26,7 +26,7 @@ export default function BlogPage() {
     updateContents[(index + offset + total) % total];
 
     return (
-        <main className="min-h-screen bg-[#FDFCF7] text-base">
+        <main className="min-h-screen bg-[#FDFCF7] text-base pt-36">
             <div className="px-4 md:px-16 lg:px-32 py-12 space-y-12">
                 <img
                 src="image.png"
