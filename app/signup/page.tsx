@@ -4,7 +4,7 @@ import EmailSignupForm from "./EmailSignupForm";
 export default function SignupPage()
 {
     return (
-        <main className="min-h-screen bg-background text-foreground">
+        <main className="min-h-screen bg-background text-foreground pt-36">
             {/* Page content */}
             <div className="mx-auto w-full max-w-6xl px-6 py-10">
                 {/* Email entry */}

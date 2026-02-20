@@ -16,8 +16,15 @@ const links = [
 export default function NavBar() {
     const pathname = usePathname();
     return (
-        <header className="flex items-center sticky top-[30px] z-50 ml-[30px]">
-            <Image src="/runwayIcon.png" alt="runway icon" width={129} height={116} />
+        <header className="fixed top-[30px] right-0 left-0 flex items-center top-[30px] z-50 ml-[30px]">
+            <Link href="/">
+                <Image
+                    src="/runwayIcon.png"
+                    alt="runway icon"
+                    width={129}
+                    height={116}
+                />
+            </Link>
             <nav className="flex px-[16px] py-[10px] rounded-[32px] w-fit bg-[#D9D9D9]/40 backdrop-blur-lg mr-[30px] ml-auto">
                 <div
                     className="flex text-lg text-black"
