@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const links = [
     { href: "/about", label: "About" },
@@ -28,7 +28,7 @@ export default function NavBar() {
             <nav className="flex px-[16px] py-[10px] rounded-[32px] w-fit bg-[#D9D9D9]/40 backdrop-blur-lg mr-[30px] ml-auto">
                 <div
                     className="flex text-lg text-black"
-                    style={{ textShadow: '0 3px 4px rgba(0,0,0,0.30)' }}
+                    style={{ textShadow: "0 3px 4px rgba(0,0,0,0.30)" }}
                 >
                     <div className="flex items-center ">
                         {links.map((link, i) => (
@@ -37,8 +37,8 @@ export default function NavBar() {
                                     href={link.href}
                                     className={`px-2 ${
                                         pathname === link.href
-                                            ? 'underline underline-offset-4 font-medium'
-                                            : 'hover:underline underline-offset-4'
+                                            ? "underline underline-offset-4 font-medium"
+                                            : "hover:underline underline-offset-4"
                                     }`}
                                 >
                                     {link.label}
