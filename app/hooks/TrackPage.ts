@@ -10,7 +10,7 @@ export default function useTrackPage({ page }: TrackPageProps) {
   useEffect(() => {
     const trackPage = async () => {
       try {
-        await fetch("/api/track", {
+        await fetch("/api/demo/track", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
