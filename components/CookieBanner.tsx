@@ -40,20 +40,33 @@ export default function CookieBanner() {
 
     return (
         <div
-            className="fixed bottom-0 left-0 right-0 z-50 flex flex-wrap items-center justify-center gap-3 border-t bg-background/95 px-4 py-3 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/80"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
             role="dialog"
+            aria-modal="true"
             aria-label="Cookie consent"
         >
-            <p className="text-sm text-foreground">
-                We use cookies. You can accept or opt out.
-            </p>
-            <div className="flex flex-wrap items-center gap-2">
-                <Button onClick={handleAccept} size="sm">
-                    Accept
-                </Button>
-                <Button onClick={handleOptOut} variant="outline" size="sm">
-                    Opt out
-                </Button>
+            {/* Backdrop */}
+            <div
+                className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                aria-hidden="true"
+            />
+            {/* Modal window */}
+            <div className="relative w-full max-w-lg rounded-xl border bg-background p-6 shadow-2xl sm:p-8">
+                <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
+                    Cookie notice
+                </h2>
+                <p className="mb-6 text-sm text-muted-foreground sm:text-base">
+                    We use cookies to improve your experience and for analytics.
+                    You can accept or opt out.
+                </p>
+                <div className="flex flex-wrap items-center gap-3">
+                    <Button onClick={handleAccept} size="default" className="min-w-[100px]">
+                        Accept
+                    </Button>
+                    <Button onClick={handleOptOut} variant="outline" size="default" className="min-w-[100px]">
+                        Opt out
+                    </Button>
+                </div>
             </div>
         </div>
     );
