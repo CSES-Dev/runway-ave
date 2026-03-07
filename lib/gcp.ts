@@ -64,3 +64,33 @@ export async function getSignedUrl(
 
   return url;
 }
+
+/**
+ * Fetches a text file from GCS (e.g. description.txt)
+ */
+export async function getTextFile(filePath: string): Promise<string> {
+  const file = bucket.file(filePath);
+  const [exists] = await file.exists();
+  if (!exists) throw new Error(`File not found: ${filePath}`);
+  const [contents] = await file.download();
+  return contents.toString("utf-8");
+}
+
+/**
+ * Fetches all blog pages: metadata from index.json,
+ * then description + signed image URL per page.
+ */
+export async function getBlogPages() {
+  const index = await getBlogList();
+  // index is assumed to be: Array<{ slug: string, title: string, date: string, ... }>
+
+  const pages = await Promise.all(
+    index.map(async (entry: { slug: string; [key: string]: any }) => {
+      const description = await getTextFile(`blog/${entry.slug}/description.txt`);
+      const imageUrl = await getSignedUrl(`blog/${entry.slug}/image.png`);
+      return { ...entry, description, imageUrl };
+    })
+  );
+
+  return pages;
+}
