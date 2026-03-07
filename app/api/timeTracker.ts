@@ -9,72 +9,36 @@ export function useTimeTracker(sectionId: string) {
   useEffect(() => {
     if (!ref.current) return;
 
-    const sendTime = async (durationMs: number, startedAt: number, endedAt: number) => {
-      const event = {
-        event_type: "component_view",
-        payload: {
-          sectionId,
-          durationMs,
-        },
-      };
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        if (startTime.current === null) {
+          startTime.current = Date.now();
+        }
+      } else {
+        if (startTime.current !== null) {
+          const durationMs = Date.now() - startTime.current;
 
-      console.log("timetracking sending:", event);
+          void fetch("/api/track", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              event_type: "component_view",
+              payload: {
+                sectionId,
+                durationMs,
+              },
+            }),
+            keepalive: true,
+          });
 
-      try {
-        const res = await fetch("/api/track", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(event),
-          keepalive: true,
-        });
-
-        const data = await res.json();
-        console.log("response:", data);
-      } catch (err) {
-        console.error("error:", err);
+          startTime.current = null;
+        }
       }
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (startTime.current === null) {
-              startTime.current = Date.now();
-              console.log("feature entered viewport:", sectionId);
-            }
-          } else {
-            if (startTime.current !== null) {
-              const endedAt = Date.now();
-              const startedAt = startTime.current;
-              const durationMs = endedAt - startedAt;
-
-              console.log("feature left viewport:", sectionId, durationMs);
-
-              void sendTime(durationMs, startedAt, endedAt);
-              startTime.current = null;
-            }
-          }
-        });
-      },
-      { threshold: 0 }
-    );
+    }, { threshold: 0 }); //start when feature first appears
 
     observer.observe(ref.current);
 
-    //when component unmound
     return () => {
-      if (startTime.current !== null) {
-        const endedAt = Date.now();
-        const startedAt = startTime.current;
-        const durationMs = endedAt - startedAt;
-
-        console.log("[TimeTracker] unmount send:", sectionId, durationMs);
-        void sendTime(durationMs, startedAt, endedAt);
-
-        startTime.current = null;
-      }
-
       observer.disconnect();
     };
   }, [sectionId]);
