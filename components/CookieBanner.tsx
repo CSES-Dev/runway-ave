@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 const CONSENT_COOKIE_NAME = 'runway_cookie_consent';
 const COOKIE_MAX_AGE_DAYS = 365;
 
-function getConsentCookie(): string | null {
+export function getConsentCookie(): string | null {
     if (typeof document === 'undefined') return null;
     const match = document.cookie.match(
         new RegExp('(^| )' + CONSENT_COOKIE_NAME + '=([^;]+)')
