@@ -8,18 +8,18 @@ export default function HomePage() {
       <Title />
       <section className="flex w-full border-t border-b border-black">
         <div className="w-1/2">
-        <Feature
-          text="Overview of Consumer Features:"
-          image="/consumer.png"
-          link="/consumer"
-        />
+          <Feature
+            text="Overview of Consumer Features:"
+            image="/consumer.png"
+            link="/consumer"
+          />
         </div>
         <div className="w-1/2 border-l border-black">
-        <Feature
-          text="Overview of Vendor Offerings:"
-          image="/vendor.png"
-          link="/vendor"
-        />
+          <Feature
+            text="Overview of Vendor Offerings:"
+            image="/vendor.png"
+            link="/vendor"
+          />
         </div>
       </section>
       <PreviewSection />

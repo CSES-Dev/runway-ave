@@ -34,12 +34,14 @@ export default function CookieBanner() {
     const handleAccept = () => {
         setConsentCookie('accepted');
         setShowBanner(false);
+        window.dispatchEvent(new Event('runway_consent_changed'));
         router.refresh(); // Tells Next.js to re-run server logic/middleware
     };
 
     const handleOptOut = () => {
         setConsentCookie('rejected');
         setShowBanner(false);
+        window.dispatchEvent(new Event('runway_consent_changed'));
         router.refresh(); // Updates the 'x-cookie-consent' header globally
     };
 
