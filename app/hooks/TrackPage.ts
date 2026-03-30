@@ -1,5 +1,6 @@
 "use client";
 
+import { getConsentCookie } from "@/components/CookieBanner";
 import { useEffect } from "react";
 
 type TrackPageProps = {
@@ -8,6 +9,9 @@ type TrackPageProps = {
 
 export default function useTrackPage({ page }: TrackPageProps) {
   useEffect(() => {
+    const consent = getConsentCookie();
+    if (consent === null) return;
+
     const trackPage = async () => {
       try {
         await fetch("/api/track", {
@@ -20,7 +24,7 @@ export default function useTrackPage({ page }: TrackPageProps) {
             payload: {
               page,
               url: window.location.href,
-              userAgent: navigator.userAgent,
+              userAgent: consent === 'accepted' ? navigator.userAgent : 'Anonymized',
             },
           }),
         });
