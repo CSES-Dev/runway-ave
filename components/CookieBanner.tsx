@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 
 const CONSENT_COOKIE_NAME = 'runway_cookie_consent';
@@ -20,23 +21,30 @@ function setConsentCookie(value: 'accepted' | 'rejected') {
 }
 
 export default function CookieBanner() {
+    const router = useRouter();
+    const [mounted, setMounted] = useState(false);
     const [showBanner, setShowBanner] = useState(false);
 
     useEffect(() => {
-        setShowBanner(getConsentCookie() === null);
+        setMounted(true); 
+        const consent = getConsentCookie();
+        setShowBanner(consent === null);
     }, []);
 
     const handleAccept = () => {
         setConsentCookie('accepted');
         setShowBanner(false);
+        router.refresh(); // Tells Next.js to re-run server logic/middleware
     };
 
     const handleOptOut = () => {
         setConsentCookie('rejected');
         setShowBanner(false);
+        router.refresh(); // Updates the 'x-cookie-consent' header globally
     };
 
-    if (!showBanner) return null;
+    // If we haven't mounted yet, return null to prevent hydration flicker
+    if (!mounted || !showBanner) return null;
 
     return (
         <div

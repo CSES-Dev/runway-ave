@@ -7,6 +7,8 @@ export function middleware(request: NextRequest) {
     const response = NextResponse.next();
     if (consent === 'accepted' || consent === 'rejected') {
         response.headers.set('x-cookie-consent', consent);
+    }else {
+        response.headers.set('x-cookie-consent', 'undecided');
     }
     return response;
 }
