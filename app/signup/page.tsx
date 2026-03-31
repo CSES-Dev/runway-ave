@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import EmailSignupForm from "./EmailSignupForm";
+import useTrackPage from "../hooks/TrackPage";
 
 export default function SignupPage()
 {
+    useTrackPage({page:"signup"});
+
     return (
         <main className="min-h-screen bg-background text-foreground pt-36">
             {/* Page content */}

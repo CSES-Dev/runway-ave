@@ -4,17 +4,50 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useAnalytics } from "@/components/AnalyticsProvider";
 
 export default function EmailSignupForm()
 {
     const [email, setEmail] = useState("");
+    const sessionID = useAnalytics()
 
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>)
-    {
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-        // Placeholder: wire up server action / API route later
-        console.log("Email submitted:", email);
+        const sourcePage = "Signup Page";
+        
+        // Sending data to the API route
+        try {
+            const response = await fetch('/api/track', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    event_type: 'click_signup',
+                    payload: {
+                        email,
+                        timestamp: new Date().toISOString(),
+                        sourcePage,
+                        sessionID,
+                    },
+                }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                console.log('Email submitted successfully:', result);
+                alert('Thank you for subscribing!');
+                setEmail('');
+            } else {
+                console.error('Error:', result.error);
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            console.error('Request failed', error);
+            alert('There was a problem with your submission. Please try again later.');
+        }
     }
 
     return (
