@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTimeTracker } from "../../hooks/timeTracker";
 
 type TeamMember = {
     name: string;
@@ -26,6 +27,7 @@ const TEAM: TeamMember[] = [
 ];
 
 export default function MeetTheTeam() {
+    const sectionRef = useTimeTracker("meet_the_team");
     const [page, setPage] = useState(0);
     const pageCount = Math.max(1, Math.ceil(TEAM.length / PAGE_SIZE));
     const start = page * PAGE_SIZE;
@@ -35,7 +37,7 @@ export default function MeetTheTeam() {
     const showArrows = TEAM.length > PAGE_SIZE;
 
     return (
-        <section className="w-full bg-white pt-36 pb-16 md:pt-14 md:pb-24 px-4 md:px-8">
+        <section className="w-full bg-white pt-36 pb-16 md:pt-14 md:pb-24 px-4 md:px-8" ref={sectionRef}>
             <h2 className="text-center font-normal text-black mb-12 md:mb-16 text-[clamp(2rem,5vw,70px)] leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Meet the Team:
             </h2>

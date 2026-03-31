@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useAnalytics } from "@/components/AnalyticsProvider";
 
 export function useTimeTracker(sectionId: string) {
   const ref = useRef<HTMLDivElement>(null);
   const startTime = useRef<number | null>(null);
+  const sessionId = useAnalytics()
 
   useEffect(() => {
     if (!ref.current) return;
@@ -25,6 +27,7 @@ export function useTimeTracker(sectionId: string) {
               event_type: "component_view",
               payload: {
                 sectionId,
+                sessionId,
                 durationMs,
               },
             }),
@@ -41,7 +44,7 @@ export function useTimeTracker(sectionId: string) {
     return () => {
       observer.disconnect();
     };
-  }, [sectionId]);
+  }, [sectionId, sessionId]);
 
   return ref;
 }
