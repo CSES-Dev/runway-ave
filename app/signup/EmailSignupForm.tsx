@@ -4,15 +4,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useAnalytics } from "@/components/AnalyticsProvider";
 
 export default function EmailSignupForm()
 {
     const [email, setEmail] = useState("");
+    const sessionID = useAnalytics()
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-        const sessionID = Math.random().toString(36).substring(7); // This is a temporary placeholder. You may replace it later.
         const sourcePage = "Signup Page";
         
         // Sending data to the API route
