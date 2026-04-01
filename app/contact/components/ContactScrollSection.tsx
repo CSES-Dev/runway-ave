@@ -4,11 +4,26 @@ import { useState, useEffect, useRef } from "react";
 import VendorInquiries from "@/app/contact/components/VendorInquiries";
 import PressInquiries from "@/app/contact/components/PressInquiries";
 import GeneralSupport from "@/app/contact/components/GeneralSupport";
+import { useTrackHover } from "@/app/hooks/trackHover";
 
 // Add cards into here if needed, ideally with the same visuals as the rest.
 const cards = [VendorInquiries, PressInquiries, GeneralSupport];
 const scrollSensitivity = 0.00045; // Sensitivity (Higher = more Card switching per scroll)
 
+function TrackedCard({ cardId, children }: { cardId: string; children: React.ReactNode })
+{
+    const { onMouseEnter, onMouseLeave } = useTrackHover(cardId);
+
+    return (
+        <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            {children}
+        </div>
+    );
+}
+/**
+ * Hover tracking works best on single elements bc
+ * scroll-section has multiple cards in DOM.
+ */
 export default function ContactScrollSection() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [scrollIndex, setScrollIndex] = useState(0);
@@ -56,7 +71,9 @@ export default function ContactScrollSection() {
                         justifyContent: "center",
                         alignItems: "center",
                         }}>
-                            <Card />
+                            <TrackedCard cardId={cards[i].name}>
+                                <Card />
+                            </TrackedCard>
                     </div>
                 ))}
         </div>
