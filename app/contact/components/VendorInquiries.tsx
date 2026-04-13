@@ -8,7 +8,7 @@ export default function VendorInquiries() {
             <div className="flex flex-col items-center text-center text-[clamp(1.2rem,7vw,5.5rem)] group-hover:w-[479px]">
                 VENDOR INQUIRIES
             </div>
-            <div className="w-[0px] text-[clamp(1rem,0.2vw,2rem)] group-hover:pl-16 opacity-0 overflow-hidden transition-all duration-1000 group-hover:w-[497px] group-hover:opacity-100">
+            <div className="w-[0px] text-[clamp(1.2rem,1.4vw,3rem)] group-hover:pl-16 opacity-0 overflow-hidden transition-all duration-1000 group-hover:w-[497px] group-hover:opacity-100">
                 Loren ipsum odt alor
                 <p>text</p>
                 <p>text</p>
