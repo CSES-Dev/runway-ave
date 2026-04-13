@@ -50,3 +50,48 @@ npm run dev
 - `components/` - Shared UI components
 - `public/` - Static assets
 - `tests/` - Playwright end-to-end tests
+
+# Google Cloud Storage (GCS) Setup Guide
+
+## Overview 
+Each blog post consists of:
+- an image
+- a description file
+
+## Bucket Structure
+
+Bucket name: runway-cses
+```text
+blog/
+  index.json
+  post-1/
+    image.png
+    description.txt
+  post-2/
+    image.png
+    description.txt
+```
+
+## index.json Format
+
+```json
+{
+  "posts": [
+    {
+      "slug": "post-1",
+      "title": "First Blog Post",
+      "image": "blog/post-1/image.png",
+      "descriptionFile": "blog/post-1/description.txt"
+    }
+  ]
+}
+```
+
+## Local Setup
+Create and add key to file: `gcp-keys.json`
+
+Add to `.env`: 
+```text
+GCS_KEY_FILEPATH=./gcp-keys.json
+GCS_BUCKET=runway-cses
+```
