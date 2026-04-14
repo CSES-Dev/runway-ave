@@ -37,7 +37,7 @@ export default function MeetTheTeam() {
     const showArrows = TEAM.length > PAGE_SIZE;
 
     return (
-        <section className="w-full bg-white pt-36 pb-16 md:pt-14 md:pb-24 px-4 md:px-8" ref={sectionRef}>
+        <section className="w-full bg-[#FDFCF7] pt-36 pb-16 md:pt-14 md:pb-24 px-4 md:px-8" ref={sectionRef}>
             <h2 className="text-center font-normal text-black mb-12 md:mb-16 text-[clamp(2rem,5vw,70px)] leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Meet the Team:
             </h2>
@@ -85,6 +85,15 @@ export default function MeetTheTeam() {
                         <ChevronRight className="w-6 h-6" />
                     </button>
                 )}
+            </div>
+
+            <div className="flex justify-center mt-16">
+                <button
+                    type="button"
+                    className="px-10 py-3 bg-[#C75B3F] text-white text-lg font-medium rounded-full hover:bg-[#b04e35] transition-colors"
+                >
+                    Careers
+                </button>
             </div>
         </section>
     );
