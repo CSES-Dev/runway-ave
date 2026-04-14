@@ -1,3 +1,7 @@
+"use client";
+
+import { useTrackHover } from "../../hooks/trackHover";
+
 const Feature = ({
   text,
   image,
@@ -7,8 +11,12 @@ const Feature = ({
   image: string;
   link: string;
 }) => {
+  const { onMouseEnter, onMouseLeave } = useTrackHover(link);
+
   return (
     <div
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       className="
         w-full
         h-[calc(994/1512*100vw)]

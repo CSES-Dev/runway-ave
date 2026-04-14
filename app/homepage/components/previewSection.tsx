@@ -1,6 +1,13 @@
+"use client";
+
+import { useTimeTracker } from "../../hooks/timeTracker";
+
 const PreviewSection = () => {
+  const sectionRef = useTimeTracker("preview_section");
+
   return (
     <section
+      ref={sectionRef}
       className="
         relative
         w-full
