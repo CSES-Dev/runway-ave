@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import Updates from './Updates';
 import Announcement from './Announcement';
 import Media from './Media';
+import useTrackPage from '../hooks/TrackPage';
+import { useTimeTracker } from '../hooks/timeTracker';
 
 type BlogPageEntry = {
     slug: string;
@@ -43,6 +45,11 @@ async function fetchBlogPages(): Promise<BlogPageEntry[]> {
 }
 
 export default function BlogPage() {
+    useTrackPage({ page: "blog" });
+    const announcementsRef = useTimeTracker("blog_announcements");
+    const updatesRef = useTimeTracker("blog_updates");
+    const mediaRef = useTimeTracker("blog_media");
+
     const [updates, setUpdates] = useState<BlogPageEntry[]>([]);
     const [index, setIndex] = useState(0);
     const [loading, setLoading] = useState(true);
@@ -74,7 +81,7 @@ export default function BlogPage() {
                     className="w-full max-w-[1160px] h-[306px]"
                 />
 
-                <section className="space-y-10">
+                <section className="space-y-10" ref={announcementsRef}>
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif tracking-wide">
                         ANNOUNCEMENTS
                     </h1>
@@ -86,7 +93,7 @@ export default function BlogPage() {
                     </div>
                 </section>
 
-                <section className="space-y-10">
+                <section className="space-y-10" ref={updatesRef}>
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif tracking-wide">
                         UPDATES
                     </h1>
@@ -161,7 +168,7 @@ export default function BlogPage() {
                     )}
                 </section>
 
-                <section className="space-y-10">
+                <section className="space-y-10" ref={mediaRef}>
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif tracking-wide">
                         MEDIA
                     </h1>

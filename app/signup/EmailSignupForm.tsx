@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAnalytics } from "@/components/AnalyticsProvider";
+import { useTimeTracker } from "../hooks/timeTracker";
 
 export default function EmailSignupForm()
 {
+    const formRef = useTimeTracker("email_signup_form");
     const [email, setEmail] = useState("");
     const sessionID = useAnalytics()
 
@@ -51,6 +53,7 @@ export default function EmailSignupForm()
     }
 
     return (
+        <div ref={formRef}>
         <form
             className="flex w-full max-w-[745px] flex-col gap-4 sm:flex-row sm:items-center"
             onSubmit={handleSubmit}
@@ -78,5 +81,6 @@ export default function EmailSignupForm()
                 Subscribe
             </Button>
         </form>
+        </div>
     );
 }

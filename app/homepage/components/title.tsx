@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTimeTracker } from "../../hooks/timeTracker";
 
 const Title = () => {
+  const sectionRef = useTimeTracker("hero_title");
   const fullText = "Walk The Runway";
   const [displayText, setDisplayText] = useState("");
 
@@ -18,6 +20,7 @@ const Title = () => {
 
   return (
     <section
+      ref={sectionRef}
       className="
         w-full
         h-[calc(878/1512*100vw)]

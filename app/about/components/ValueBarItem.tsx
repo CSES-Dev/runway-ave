@@ -1,3 +1,7 @@
+"use client";
+
+import { useTimeTracker } from "../../hooks/timeTracker";
+
 const values = [
   "Innovative",
   "Inclusive",
@@ -9,8 +13,10 @@ const values = [
 ];
 
 export default function ValueBarItem() {
+  const sectionRef = useTimeTracker("value_bar");
+
   return (
-    <div className="w-full bg-gray-200 py-6 mt-12 overflow-hidden">
+    <div className="w-full bg-gray-200 py-6 mt-12 overflow-hidden" ref={sectionRef}>
       {/* <div className="flex overflow-x-auto whitespace-nowrap px-6 md:px-10 gap-8 md:justify-between items-center max-w-screen-2xl mx-auto no-scrollbar"> */}
       <div className="flex w-max animate-infinite-scroll">
         <div className="flex items-center gap-16 px-8">
