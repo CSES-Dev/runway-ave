@@ -10,14 +10,14 @@ export default function HomePage() {
         <div className="w-1/2">
           <Feature
             text="Overview of Consumer Features:"
-            image="/consumer.png"
+            image="/consumer.jpg"
             link="/consumer"
           />
         </div>
         <div className="w-1/2 border-l border-black">
           <Feature
             text="Overview of Vendor Offerings:"
-            image="/vendor.png"
+            image="/vendor.jpg"
             link="/vendor"
           />
         </div>

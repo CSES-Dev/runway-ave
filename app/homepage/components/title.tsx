@@ -22,8 +22,10 @@ const Title = () => {
         w-full
         h-[calc(878/1512*100vw)]
         bg-[#D9D9D9]
+        bg-cover bg-center
         border-b border-black
       "
+      style={{ backgroundImage: `url("/homebg.jpg")` }}
     >
       <div
         className="
@@ -38,7 +40,7 @@ const Title = () => {
             font-['Test Family VF']
             text-[calc(96/1512*100vw)]
             leading-[1]
-            text-black text-center
+            text-[#F5F5F5] text-center
             min-h-[calc(96/1512*100vw)]
           "
         >
@@ -46,7 +48,7 @@ const Title = () => {
         </h1>
 
         <img
-          src="/arrow-icon.svg"
+          src="/arrow-icon.png"
           alt="Scroll down"
           className="
             mt-[calc(25/1512*100vw)]

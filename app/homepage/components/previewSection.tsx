@@ -10,7 +10,7 @@ const PreviewSection = () => {
       "
     >
       <img
-        src="/iphone.png"
+        src="/iphone1.png"
         alt="App preview phone"
         className="
           absolute
@@ -79,7 +79,7 @@ const PreviewSection = () => {
               w-[calc(257/1512*100vw)]
               px-[calc(40/1512*100vw)]
               rounded-full
-              bg-[#444444]
+              bg-[#D4502F]
               text-white
               text-[calc(20/1512*100vw)]
               flex items-center justify-center

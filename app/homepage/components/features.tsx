@@ -25,17 +25,17 @@ const Feature = ({
           pb-[calc(88/1512*100vw)]
         "
       >
-        <p className="text-center text-[calc(35/1512*100vw)]">
+        <p className="text-center text-[calc(35/1512*100vw)] text-[#F5F5F5]">
           {text}
         </p>
 
         <button
           className="
             flex items-center justify-center text-[#F5F5F5] text-[calc(16/1512*100vw)]
-            bg-[#2C2C2C]
+            bg-[#D4502F]
             w-[calc(185/1512*100vw)]
             h-[calc(58/1512*100vw)]
-            rounded-[calc(8/1512*100vw)]
+            rounded-[calc(8/1512*400vw)]
             mt-[calc(23/1512*100vw)]
             border border-[#2C2C2C]
           "
