@@ -4,12 +4,17 @@ import React from "react";
 
 export default function GeneralSupport() {
     return (
-        <div className="flex flex-col md:flex-row pt-6 md:pt-0 items-center md:items-stretch rounded-3xl w-[92vw] max-w-[1152px] h-[clamp(320px,60vw,530px)] md:h-[530px] bg-gradient-to-r from-[#8CDFA8] to-[#34543F]">
-            <div className="flex text-center text-[clamp(2.2rem,7vw,6.5rem)] md:text-7xl items-center w-[400px] pl-8 text-white">
+        <div className="flex items-center justify-center group w-[100vw] max-w-[1152px] h-[218px] hover:h-[316px] rounded-[3rem] overflow-hidden text-white transition-all duration-1000 bg-[linear-gradient(90deg,#363A42_0%,#8994A8_100%)] hover:bg-[linear-gradient(90deg,#8CDFA8_25%,#34543F_100%)]">
+            <div className="flex flex-col items-center text-center text-[clamp(1.2rem,7vw,5rem)] group-hover:w-[479px]">
                 GENERAL SUPPORT
             </div>
-            <div className="p-6 md:p-20 text-center md:text-left text-white text-[clamp(0.95rem,2.6vw,1.5rem)] md:text-2xl">
-                Loren ipsum odt alor If you need support, you can do this that and the third Contact at email@email.com with inquiries text text
+            <div className="w-[0px] group-hover:text-[clamp(1.2rem,1.4vw,3rem)] group-hover:pl-16 opacity-0 overflow-hidden transition-all duration-1000 group-hover:w-[497px] group-hover:opacity-100">
+                Loren ipsum odt alor
+                <p>text</p>
+                <p>text</p>
+                <p>text</p>
+                <p>text</p>
+                <p>text</p> 
             </div>
         </div>
     )
