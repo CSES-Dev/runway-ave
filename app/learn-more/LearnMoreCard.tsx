@@ -18,7 +18,7 @@ const LearnMoreCard: React.FC<LearnMoreProps> = ({
 
   return (
     <div
-      className={`relative bg-[#612414] h-[471px] w-full rounded-xl p-6 text-white transition-transform duration-300 hover:scale-[1.02] ${className}`}
+      className={`relative bg-[#612414] h-[471px] w-full rounded-xl p-6 text-white transition-transform duration-300 hover:scale-[1.05] ${className}`}
     >
 
       <div className="flex flex-col h-full">
