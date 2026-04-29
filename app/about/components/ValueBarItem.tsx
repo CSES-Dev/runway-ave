@@ -17,7 +17,7 @@ export default function ValueBarItem() {
           {values.map((value, index) => (
             <span
               key={`val1-${index}`}
-              className="text-[85px] leading-none font-normal text-black whitespace-nowrap font-serif"
+              className="text-[42px] md:text-[54px] leading-none font-light text-black whitespace-nowrap font-serif"
             >
               {value}
             </span>
@@ -28,7 +28,7 @@ export default function ValueBarItem() {
           {values.map((value, index) => (
             <span
               key={`val2-${index}`}
-              className="text-[85px] leading-none font-normal text-black whitespace-nowrap font-serif"
+              className="text-[42px] md:text-[54px] leading-none font-light text-black whitespace-nowrap font-serif"
             >
               {value}
             </span>

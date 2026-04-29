@@ -38,7 +38,7 @@ export default function MeetTheTeam() {
 
     return (
         <section className="w-full bg-[#FDFCF7] pt-36 pb-16 md:pt-14 md:pb-24 px-4 md:px-8" ref={sectionRef}>
-            <h2 className="text-center font-normal text-black mb-12 md:mb-16 text-[clamp(2rem,5vw,70px)] leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <h2 className="text-center font-normal text-black mb-12 md:mb-16 text-[clamp(2rem,5vw,70px)] leading-tight font-serif">
                 Meet the Team:
             </h2>
 
