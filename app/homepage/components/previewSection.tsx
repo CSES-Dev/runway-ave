@@ -10,7 +10,7 @@ const PreviewSection = () => {
       "
     >
       <img
-        src="/iphone.png"
+        src="/iphone1.png"
         alt="App preview phone"
         className="
           absolute
@@ -25,8 +25,8 @@ const PreviewSection = () => {
       <h2
         className="
           absolute
-          left-[calc(700/1512*100vw)]
-          top-[calc(69/1512*100vw)]
+          left-[calc(650/1512*100vw)]
+          top-[calc(325/1512*100vw)]
           text-[calc(70/1512*100vw)]
           text-black
         "
@@ -37,8 +37,8 @@ const PreviewSection = () => {
       <div
         className="
           absolute
-          left-[calc(610/1512*100vw)]
-          top-[calc(271/1512*100vw)]
+          left-[calc(650/1512*100vw)]
+          top-[calc(500/1512*100vw)]
           w-[calc(761/1512*100vw)]
           h-[calc(116/1512*100vw)]
           flex
@@ -50,7 +50,7 @@ const PreviewSection = () => {
         </p>
         <div
           className="
-            mt-[calc(50/1512*100vw)]
+            mt-[calc(20/1512*100vw)]
             flex
             items-center
             gap-[calc(20/1512*100vw)]
@@ -79,7 +79,7 @@ const PreviewSection = () => {
               w-[calc(257/1512*100vw)]
               px-[calc(40/1512*100vw)]
               rounded-full
-              bg-[#444444]
+              bg-[#D4502F]
               text-white
               text-[calc(20/1512*100vw)]
               flex items-center justify-center
@@ -93,8 +93,8 @@ const PreviewSection = () => {
       <div
         className="
           absolute
-          left-[calc(590/1512*100vw)]
-          top-[calc(906/1512*100vw)]
+          left-[calc(650/1512*100vw)]
+          top-[calc(710/1512*100vw)]
           flex
           gap-[calc(23/1512*100vw)]
         "
