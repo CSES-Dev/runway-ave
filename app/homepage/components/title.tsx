@@ -31,13 +31,13 @@ const Title = () => {
         className="
           h-full
           flex flex-col items-center
-          pt-[calc(649/1512*100vw)]
+          pt-[calc(610/1512*100vw)]
           pb-[calc(22/1512*100vw)]
         "
       >
         <h1
           className="
-            font-['Test Family VF']
+            font-serif 
             text-[calc(96/1512*100vw)]
             leading-[1]
             text-[#F5F5F5] text-center
@@ -51,7 +51,7 @@ const Title = () => {
           src="/arrow-icon.png"
           alt="Scroll down"
           className="
-            mt-[calc(25/1512*100vw)]
+            mt-[calc(40/1512*100vw)]
             w-[calc(77/1512*100vw)]
             h-[calc(77/1512*100vw)]
           "
