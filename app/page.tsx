@@ -1,8 +1,12 @@
+"use client";
+
 import Feature from "./homepage/components/features";
 import Title from "./homepage/components/title";
 import PreviewSection from "./homepage/components/previewSection";
+import useTrackPage from "./hooks/TrackPage";
 
 export default function HomePage() {
+  useTrackPage({ page: "home" });
   return (
     <main className="bg-white flex flex-col">
       <Title />

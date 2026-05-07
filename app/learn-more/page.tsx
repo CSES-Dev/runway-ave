@@ -1,8 +1,10 @@
 'use client'
 import { useState, useEffect } from 'react';
 import LearnMoreCard from './LearnMoreCard';
+import useTrackPage from '../hooks/TrackPage';
 
 export default function LearnMorePage(){
+    useTrackPage({ page: "learn-more" });
     return(
         <main className="min-h-screen bg-[#FDFCF7] text-base pt-36">
             <div className="px-4 md:px-8 lg:px-16 py-12 space-y-12">

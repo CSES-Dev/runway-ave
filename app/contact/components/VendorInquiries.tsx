@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
+import { useTrackHover } from "@/app/hooks/trackHover";
 
 export default function VendorInquiries() {
+    const { onMouseEnter, onMouseLeave } = useTrackHover("vendor_inquiries");
+
     return (
-        <div className="flex items-center justify-center group w-[100vw] max-w-[1152px] h-[218px] hover:h-[316px] rounded-[3rem] overflow-hidden text-white transition-all duration-1000 bg-[linear-gradient(90deg,#363A42_0%,#8994A8_100%)] hover:bg-[linear-gradient(90deg,#FF9775_0%,#B42C00_100%)]">
+        <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="flex items-center justify-center group w-[100vw] max-w-[1152px] h-[218px] hover:h-[316px] rounded-[3rem] overflow-hidden text-white transition-all duration-1000 bg-[linear-gradient(90deg,#363A42_0%,#8994A8_100%)] hover:bg-[linear-gradient(90deg,#FF9775_0%,#B42C00_100%)]">
             <div className="flex flex-col items-center text-center text-[clamp(1.2rem,4vw,5rem)] group-hover:w-[479px]">
                 VENDOR INQUIRIES
             </div>
