@@ -1,3 +1,7 @@
+"use client";
+
+import { useTimeTracker } from "@/app/hooks/timeTracker";
+
 const Feature = ({
   text,
   image,
@@ -7,8 +11,11 @@ const Feature = ({
   image: string;
   link: string;
 }) => {
+  const sectionRef = useTimeTracker(`feature_${link}`);
+
   return (
     <div
+      ref={sectionRef}
       className="
         w-full
         h-[calc(994/1512*100vw)]

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { useTrackHover } from '@/app/hooks/trackHover';
 
 interface LearnMoreProps {
   className?: string;
@@ -15,9 +16,12 @@ const LearnMoreCard: React.FC<LearnMoreProps> = ({
   morePoints = [],
 }) => {
   const [expanded, setExpanded] = useState(false);
+  const { onMouseEnter, onMouseLeave } = useTrackHover(`learn_more_card_${title}`);
 
   return (
     <div
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       className={`relative bg-[#612414] h-[471px] w-full rounded-xl p-6 text-white transition-transform duration-300 hover:scale-[1.05] ${className}`}
     >
 

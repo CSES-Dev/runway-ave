@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Updates from './Updates';
 import Announcement from './Announcement';
 import Media from './Media';
+import useTrackPage from '../hooks/TrackPage';
 
 type BlogPageEntry = {
     slug: string;
@@ -43,6 +44,7 @@ async function fetchBlogPages(): Promise<BlogPageEntry[]> {
 }
 
 export default function BlogPage() {
+    useTrackPage({ page: "blog" });
     const [updates, setUpdates] = useState<BlogPageEntry[]>([]);
     const [index, setIndex] = useState(0);
     const [loading, setLoading] = useState(true);
